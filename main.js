@@ -2,9 +2,7 @@ import './style.css'
 import { data } from './src/components/data'
 import { dom } from './src/components/dom'
 import { animation } from './src/components/animation'
-
-console.log(data);
-console.log(dom);
+import { calculator } from './src/components/calculator'
 
 /* ====== 为按钮赋予标签 ====== */
 data.info.forEach(element => {
@@ -35,6 +33,7 @@ data.info.forEach(info => {
         info.key.forEach(key => {
             if (event.key === key && dom.getByID(info.id)) {
                 animation.btnPress(dom.getByID(info.id))
+                calculator.analysisEachTimeInput(info)
             }
         })
     })
@@ -44,6 +43,10 @@ data.info.forEach(info => {
                 animation.btnRelease(dom.getByID(info.id))
             }
         })
+    })
+    // 为筛选出的每一个节点添加鼠标点击事件
+    dom.getByID(info.id)?.addEventListener('click', () => {
+        calculator.analysisEachTimeInput(info)
     })
 })
 

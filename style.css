@@ -213,12 +213,13 @@ body {
   border: none;
 
   font-family: 'Chakra';
-  font-size: 3rem;
-  line-height: 1rem;
+  font-size: 2rem;
+  line-height: 0.5rem;
   text-align: right;
 
   outline: none;
 }
+
 
 #textarea input:nth-child(1) {
   opacity: 0;

@@ -1,5 +1,6 @@
 import { gsap } from "gsap";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
+import { dom } from './dom'
 gsap.registerPlugin(CSSRulePlugin)
 
 import { data } from "./data"
@@ -148,6 +149,18 @@ class Animation {
             borderLeft: css.darkSpanBeforeBorder
         })
     }
+    textAreaShowHistory = () => {
+        gsap.to(dom.getInputDom(), { duration: 0.5, y: 16 })
+        gsap.to(dom.getShowDom(),
+            { duration: 0.5, y: -16, opacity: 1, display: "block" })
+    }
+
+    textAreaHideHistory = () => {
+        gsap.to(dom.getInputDom(), { duration: 0, y: 0 })
+        gsap.to(dom.getShowDom(),
+            { duration: 0, y: 0, opacity: 0, display: "none" })
+    }
+
 }
 const animation = new Animation()
 

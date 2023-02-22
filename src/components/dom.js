@@ -60,6 +60,12 @@ class Dom {
     getAll(info) {
         return document.querySelectorAll(info)
     }
+    getInputDom = () => {
+        return this.text.input
+    }
+    getShowDom = () => {
+        return this.text.show
+    }
 }
 
 const dom = new Dom();
